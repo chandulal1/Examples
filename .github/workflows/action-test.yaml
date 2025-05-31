@@ -9,11 +9,16 @@ jobs:
         - name: checkout repo
           uses: actions/checkout@v4
         - name: welcome message
-          run: echo "testing first action"
-        - name: time print
-          run: echo $(date)
-        - name: list files
-          run: cat Dockerfile
+          run: |
+            echo "testing first action"
+            echo $(date)
+            cat Dockerfile
+            ls -lrta
+
+        # - name: time print
+        #   run: echo $(date)
+        # - name: list files
+        #   run: cat Dockerfile
 
 
 
