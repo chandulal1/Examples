@@ -6,6 +6,8 @@ jobs:
     myfirstjob:
         runs-on: ubuntu-latest
         steps:
+        - name: checkout repo
+          uses: actions/checkout@v4
         - name: welcome message
           run: echo "testing first action"
         - name: time print
