@@ -12,6 +12,8 @@ jobs:
           run: echo "testing first action"
         - name: time print
           run: echo $(date)
+        - name: list files
+          run: ls
 
 
 
