@@ -1,0 +1,32 @@
+name: myfirst
+
+on: push
+env:
+    myname: chandu
+    mypassword: s3curepaSsW0rd
+jobs:
+   firstjob:
+     runs-on: ubuntu-latest
+     steps:
+     - name: welcome come message
+       run: |
+        echo "Hello testig of Github actions"
+        sudo apt-get install cowsay -y
+        /usr/games/cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
+        cat dragon.txt
+        echo $myname
+
+   secondjob:
+      needs: firstjob
+      runs-on: ubuntu-latest
+      steps:
+      - name: build-test
+        run: echo ${{ env.myname }}
+   
+   thirdjob:
+      needs: secondjob
+      runs-on: ubuntu-latest
+      steps:
+      - name: build-test
+        run: echo ${{ env.mypassword }}
+      
